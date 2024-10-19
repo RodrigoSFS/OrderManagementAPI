@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using OrderManagementAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<OrderContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), 
+        new MySqlServerVersion(new Version(8, 0, 23))));
+
 
 // Add services to the container.
 
