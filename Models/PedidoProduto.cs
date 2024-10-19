@@ -18,4 +18,10 @@ namespace OrderManagementAPI.Models
         [NotMapped]
         public decimal TotalPrice => Produto.Preco * Quantidade;
     }
+
+    public class PedidoProdutoDto
+    {
+        public int IdProduto { get; set; }
+        public int Quantidade { get; set; }
+    }
 }

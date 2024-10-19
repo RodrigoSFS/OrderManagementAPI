@@ -7,7 +7,8 @@ namespace OrderManagementAPI.Models
     public enum PedidoStatus
     {
         Aberto,
-        Fechado
+        Fechado,
+        Cancelado
     }
     
     public class Pedido
@@ -27,5 +28,12 @@ namespace OrderManagementAPI.Models
 
         // Navigation property
         public ICollection<PedidoProduto> PedidoProdutos { get; set; }
+    }
+
+    public class PedidoDto
+    {
+        public DateTime Data { get; set; }
+        public int IdCliente { get; set; }
+        public List<PedidoProdutoDto> PedidoProdutos { get; set; }
     }
 }
