@@ -19,9 +19,6 @@ namespace OrderManagementAPI.Models
         [StringLength(15)]
         public string Telefone { get; set; }
 
-        [Required]
-        public int LimiteDeCredito { get; set; }
-
         public ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
     }
 }

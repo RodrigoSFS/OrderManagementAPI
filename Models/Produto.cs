@@ -16,6 +16,7 @@ namespace OrderManagementAPI.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Preco { get; set; }
 
+        [Required]
         public int IdCategoria { get; set; }
 
         [ForeignKey("IdCategoria")]

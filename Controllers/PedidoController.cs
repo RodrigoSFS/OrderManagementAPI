@@ -45,6 +45,21 @@ namespace OrderManagementAPI.Controllers
             return Ok(pedido);
         }
 
+        // GET: api/Pedido/status/{status}
+        [HttpGet("status/{status}")]
+        public async Task<ActionResult<IEnumerable<Pedido>>> GetPedidosByStatus(PedidoStatus status)
+        {
+            var pedidos = await _pedidoService.GetPedidosByStatusAsync(status);
+
+            if (!pedidos.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(pedidos);
+        }
+
+
         // PUT: api/Pedido/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

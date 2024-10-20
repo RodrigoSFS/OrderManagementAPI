@@ -18,6 +18,7 @@ namespace OrderManagementAPI.Models
 
         public DateTime Data { get; set; }
 
+        [Required]
         public int IdCliente { get; set; }
 
         [ForeignKey("IdCliente")]

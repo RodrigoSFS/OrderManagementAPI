@@ -48,6 +48,15 @@ namespace OrderManagementAPI.Services
             return pedido;
         }
 
+        public async Task<List<Pedido>> GetPedidosByStatusAsync(PedidoStatus status)
+        {
+            return await _context.Pedidos
+                                .Include(p => p.PedidoProdutos)
+                                .ThenInclude(pp => pp.Produto)
+                                .Where(p => p.Status == status)
+                                .ToListAsync();
+        }
+
         public async Task<bool> UpdatePedidoAsync(int id, PedidoDto pedidoDto)
         {
             var pedido = await _context.Pedidos
@@ -87,9 +96,9 @@ namespace OrderManagementAPI.Services
                 throw new InvalidOperationException("Pedido cannot be closed without products.");
             }
 
-            if (pedido.Status == PedidoStatus.Fechado || pedido.Status == PedidoStatus.Cancelado)
+            if (pedido.Status == PedidoStatus.Cancelado)
             {
-                throw new InvalidOperationException("Pedido cannot be modified when it's closed or canceled.");
+                throw new InvalidOperationException("Pedido cannot be modified when it's canceled.");
             }
 
             pedido.Status = newStatus;
@@ -103,7 +112,7 @@ namespace OrderManagementAPI.Services
         {
             var pedido = await _context.Pedidos.FindAsync(id);
 
-            if (pedido == null || pedido.Status == PedidoStatus.Fechado || pedido.Status == PedidoStatus.Cancelado)
+            if (pedido == null || pedido.Status == PedidoStatus.Fechado)
             {
                 // Cannot delete a "Fechado" or "Cancelado" order
                 return false;
