@@ -12,6 +12,6 @@ namespace OrderManagementAPI.Models
         [StringLength(50)]
         public string Nome { get; set;}
 
-        public ICollection<Produto> Produtos { get; set; }
+        public ICollection<Produto> Produtos { get; set; } = new List<Produto>();
     }
 }

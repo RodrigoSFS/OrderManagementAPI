@@ -22,6 +22,6 @@ namespace OrderManagementAPI.Models
         public Categoria Categoria { get; set; }
 
         // Navigation property
-        public ICollection<PedidoProduto> PedidoProdutos { get; set; }
+        public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
     }
 }

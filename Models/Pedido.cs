@@ -26,12 +26,12 @@ namespace OrderManagementAPI.Models
         public PedidoStatus Status { get; set; } = PedidoStatus.Aberto;
 
         // Navigation property
-        public ICollection<PedidoProduto> PedidoProdutos { get; set; }
+        public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
     }
 
     public class PedidoDto
     {
         public int IdCliente { get; set; }
-        public List<PedidoProdutoDto> PedidoProdutos { get; set; }
+        public List<PedidoProdutoDto> PedidoProdutos { get; set; } = new List<PedidoProdutoDto>();
     }
 }

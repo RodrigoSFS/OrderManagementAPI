@@ -22,6 +22,6 @@ namespace OrderManagementAPI.Models
         [Required]
         public int LimiteDeCredito { get; set; }
 
-        public ICollection<Pedido> Pedidos { get; set; }
+        public ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
     }
 }
