@@ -16,7 +16,6 @@ namespace OrderManagementAPI.Models
         [Key]
         public int IdPedido { get; set; }
 
-        [Required]
         public DateTime Data { get; set; }
 
         public int IdCliente { get; set; }
@@ -32,7 +31,6 @@ namespace OrderManagementAPI.Models
 
     public class PedidoDto
     {
-        public DateTime Data { get; set; }
         public int IdCliente { get; set; }
         public List<PedidoProdutoDto> PedidoProdutos { get; set; }
     }
