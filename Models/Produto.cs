@@ -19,7 +19,6 @@ namespace OrderManagementAPI.Models
         public int IdCategoria { get; set; }
 
         [ForeignKey("IdCategoria")]
-        public Categoria Categoria { get; set; }
 
         // Navigation property
         public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
