@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using OrderManagementAPI.Data;
+using OrderManagementAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ builder.Services.AddDbContext<OrderContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), 
         new MySqlServerVersion(new Version(8, 0, 23))));
 
+builder.Services.AddScoped<PedidoService>();
 
 // Add services to the container.
 
