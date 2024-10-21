@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrderManagementAPI</name>
+    </assembly>
+    <members>
+        <member name="T:OrderManagementAPI.Controllers.CategoriaController">
+            <summary>
+            Controlador para gerenciar categorias.
+            </summary>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.CategoriaController.GetCategorias">
+            <summary>
+            Retorna a lista de todas as categorias.
+            </summary>
+            <returns>Uma lista de categorias.</returns>
+            <response code="200">Retorna as categorias com sucesso</response>
+            <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.CategoriaController.GetCategoria(System.Int32)">
+            <summary>
+            Retorna uma categoria específica pelo ID.
+            </summary>
+            <param name="id">O ID da categoria.</param>
+            <returns>Uma categoria específica.</returns>
+            <response code="200">Categoria encontrada com sucesso</response>
+            <response code="404">Categoria não encontrada</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.CategoriaController.PutCategoria(System.Int32,OrderManagementAPI.Models.Categoria)">
+            <summary>
+            Atualiza uma categoria existente.
+            </summary>
+            <param name="id">O ID da categoria.</param>
+            <param name="categoria">Os novos dados da categoria.</param>
+            <returns>Status de sucesso ou erro.</returns>
+            <response code="204">Categoria atualizada com sucesso</response>
+            <response code="400">Requisição inválida</response>
+            <response code="404">Categoria não encontrada</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.CategoriaController.PostCategoria(OrderManagementAPI.Models.Categoria)">
+            <summary>
+            Cria uma nova categoria.
+            </summary>
+            <param name="categoria">Os dados da nova categoria.</param>
+            <returns>A categoria criada com sucesso.</returns>
+            <response code="201">Categoria criada com sucesso</response>
+            <response code="400">Requisição inválida</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.CategoriaController.DeleteCategoria(System.Int32)">
+            <summary>
+            Exclui uma categoria pelo ID.
+            </summary>
+            <param name="id">O ID da categoria.</param>
+            <returns>Status de sucesso ou erro.</returns>
+            <response code="204">Categoria excluída com sucesso</response>
+            <response code="404">Categoria não encontrada</response>
+        </member>
+        <member name="T:OrderManagementAPI.Controllers.ClienteController">
+            <summary>
+            Controlador para gerenciar clientes.
+            </summary>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ClienteController.GetClientes">
+            <summary>
+            Retorna a lista de todos os clientes.
+            </summary>
+            <returns>Uma lista de clientes.</returns>
+            <response code="200">Retorna os clientes com sucesso</response>
+            <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ClienteController.GetCliente(System.Int32)">
+            <summary>
+            Retorna um cliente específico pelo ID.
+            </summary>
+            <param name="id">O ID do cliente.</param>
+            <returns>Um cliente específico.</returns>
+            <response code="200">Cliente encontrado com sucesso</response>
+            <response code="404">Cliente não encontrado</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ClienteController.PutCliente(System.Int32,OrderManagementAPI.Models.Cliente)">
+            <summary>
+            Atualiza um cliente existente.
+            </summary>
+            <param name="id">O ID do cliente.</param>
+            <param name="cliente">Os novos dados do cliente.</param>
+            <returns>Status de sucesso ou erro.</returns>
+            <response code="204">Cliente atualizado com sucesso</response>
+            <response code="400">Requisição inválida</response>
+            <response code="404">Cliente não encontrado</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ClienteController.PostCliente(OrderManagementAPI.Models.Cliente)">
+            <summary>
+            Cria um novo cliente.
+            </summary>
+            <param name="cliente">Os dados do novo cliente.</param>
+            <returns>O cliente criado com sucesso.</returns>
+            <response code="201">Cliente criado com sucesso</response>
+            <response code="400">Requisição inválida</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ClienteController.DeleteCliente(System.Int32)">
+            <summary>
+            Exclui um cliente pelo ID.
+            </summary>
+            <param name="id">O ID do cliente.</param>
+            <returns>Status de sucesso ou erro.</returns>
+            <response code="204">Cliente excluído com sucesso</response>
+            <response code="404">Cliente não encontrado</response>
+        </member>
+        <member name="T:OrderManagementAPI.Controllers.PedidoController">
+            <summary>
+            Controlador para gerenciar pedidos.
+            </summary>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.GetPedidos">
+            <summary>
+            Retorna a lista de todos os pedidos.
+            </summary>
+            <returns>Uma lista de pedidos.</returns>
+            <response code="200">Retorna os pedidos com sucesso.</response>
+            <response code="500">Erro interno no servidor.</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.GetPedido(System.Int32)">
+            <summary>
+            Retorna um pedido específico pelo ID.
+            </summary>
+            <param name="id">O ID do pedido.</param>
+            <returns>Um pedido específico.</returns>
+            <response code="200">Pedido encontrado com sucesso.</response>
+            <response code="404">Pedido não encontrado.</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.GetPedidosByStatus(OrderManagementAPI.Models.PedidoStatus)">
+            <summary>
+            Retorna pedidos com um status específico.
+            </summary>
+            <param name="status">O status do pedido.</param>
+            <returns>Uma lista de pedidos com o status informado.</returns>
+            <response code="200">Pedidos encontrados com sucesso.</response>
+            <response code="404">Nenhum pedido encontrado com o status informado.</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.PutPedido(System.Int32,OrderManagementAPI.Models.PedidoDto)">
+            <summary>
+            Atualiza um pedido existente.
+            </summary>
+            <param name="id">O ID do pedido a ser atualizado.</param>
+            <param name="pedidoDto">Dados atualizados do pedido.</param>
+            <response code="204">Pedido atualizado com sucesso.</response>
+            <response code="400">Requisição inválida.</response>
+            <response code="404">Pedido não encontrado.</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.UpdatePedidoStatus(System.Int32,OrderManagementAPI.Models.PedidoStatus)">
+            <summary>
+            Atualiza o status de um pedido.
+            </summary>
+            <param name="id">O ID do pedido a ser atualizado.</param>
+            <param name="newStatus">O novo status do pedido.</param>
+            <response code="204">Status do pedido atualizado com sucesso.</response>
+            <response code="400">Requisição inválida.</response>
+            <response code="404">Pedido não encontrado.</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.PostPedido(OrderManagementAPI.Models.PedidoDto)">
+            <summary>
+            Cria um novo pedido.
+            </summary>
+            <param name="pedidoDto">Dados do novo pedido.</param>
+            <returns>O pedido criado.</returns>
+            <response code="201">Pedido criado com sucesso.</response>
+            <response code="400">Requisição inválida.</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.PedidoController.DeletePedido(System.Int32)">
+            <summary>
+            Remove um pedido específico pelo ID.
+            </summary>
+            <param name="id">O ID do pedido a ser removido.</param>
+            <response code="204">Pedido removido com sucesso.</response>
+            <response code="404">Pedido não encontrado.</response>
+        </member>
+        <member name="T:OrderManagementAPI.Controllers.ProdutoController">
+            <summary>
+            Controlador para gerenciar produtos.
+            </summary>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ProdutoController.GetProdutos">
+            <summary>
+            Retorna a lista de todos os produtos.
+            </summary>
+            <returns>Uma lista de produtos.</returns>
+            <response code="200">Retorna os produtos com sucesso</response>
+            <response code="500">Erro interno no servidor</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ProdutoController.GetProduto(System.Int32)">
+            <summary>
+            Retorna um produto específico pelo ID.
+            </summary>
+            <param name="id">O ID do produto.</param>
+            <returns>Um produto específico.</returns>
+            <response code="200">Produto encontrado com sucesso</response>
+            <response code="404">Produto não encontrado</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ProdutoController.PutProduto(System.Int32,OrderManagementAPI.Models.Produto)">
+            <summary>
+            Atualiza um produto existente.
+            </summary>
+            <param name="id">O ID do produto.</param>
+            <param name="produto">Os novos dados do produto.</param>
+            <returns>Status de sucesso ou erro.</returns>
+            <response code="204">Produto atualizado com sucesso</response>
+            <response code="400">Requisição inválida</response>
+            <response code="404">Produto não encontrado</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ProdutoController.PostProduto(OrderManagementAPI.Models.Produto)">
+            <summary>
+            Cria um novo produto.
+            </summary>
+            <param name="produto">Os dados do novo produto.</param>
+            <returns>O produto criado com sucesso.</returns>
+            <response code="201">Produto criado com sucesso</response>
+            <response code="400">Requisição inválida</response>
+        </member>
+        <member name="M:OrderManagementAPI.Controllers.ProdutoController.DeleteProduto(System.Int32)">
+            <summary>
+            Exclui um produto pelo ID.
+            </summary>
+            <param name="id">O ID do produto.</param>
+            <returns>Status de sucesso ou erro.</returns>
+            <response code="204">Produto excluído com sucesso</response>
+            <response code="404">Produto não encontrado</response>
+        </member>
+    </members>
+</doc>

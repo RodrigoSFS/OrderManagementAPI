@@ -250,3 +250,5 @@ C:\Users\rodri\CSharp\InsideTest\OrderManagementAPI\obj\Debug\net6.0\refint\Orde
 C:\Users\rodri\CSharp\InsideTest\OrderManagementAPI\obj\Debug\net6.0\OrderManagementAPI.pdb
 C:\Users\rodri\CSharp\InsideTest\OrderManagementAPI\obj\Debug\net6.0\OrderManagementAPI.genruntimeconfig.cache
 C:\Users\rodri\CSharp\InsideTest\OrderManagementAPI\obj\Debug\net6.0\ref\OrderManagementAPI.dll
+C:\Users\rodri\CSharp\InsideTest\OrderManagementAPI\bin\Debug\net6.0\OrderManagementAPI.xml
+C:\Users\rodri\CSharp\InsideTest\OrderManagementAPI\obj\Debug\net6.0\OrderManagementAPI.xml

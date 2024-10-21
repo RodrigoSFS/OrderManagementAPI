@@ -10,6 +10,9 @@ using OrderManagementAPI.Models;
 
 namespace OrderManagementAPI.Controllers
 {
+    /// <summary>
+    /// Controlador para gerenciar produtos.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ProdutoController : ControllerBase
@@ -21,6 +24,12 @@ namespace OrderManagementAPI.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Retorna a lista de todos os produtos.
+        /// </summary>
+        /// <returns>Uma lista de produtos.</returns>
+        /// <response code="200">Retorna os produtos com sucesso</response>
+        /// <response code="500">Erro interno no servidor</response>
         // GET: api/Produto
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
@@ -28,6 +37,13 @@ namespace OrderManagementAPI.Controllers
             return await _context.Produtos.ToListAsync();
         }
 
+         /// <summary>
+        /// Retorna um produto específico pelo ID.
+        /// </summary>
+        /// <param name="id">O ID do produto.</param>
+        /// <returns>Um produto específico.</returns>
+        /// <response code="200">Produto encontrado com sucesso</response>
+        /// <response code="404">Produto não encontrado</response>
         // GET: api/Produto/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Produto>> GetProduto(int id)
@@ -42,6 +58,15 @@ namespace OrderManagementAPI.Controllers
             return produto;
         }
 
+        /// <summary>
+        /// Atualiza um produto existente.
+        /// </summary>
+        /// <param name="id">O ID do produto.</param>
+        /// <param name="produto">Os novos dados do produto.</param>
+        /// <returns>Status de sucesso ou erro.</returns>
+        /// <response code="204">Produto atualizado com sucesso</response>
+        /// <response code="400">Requisição inválida</response>
+        /// <response code="404">Produto não encontrado</response>
         // PUT: api/Produto/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -73,6 +98,13 @@ namespace OrderManagementAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Cria um novo produto.
+        /// </summary>
+        /// <param name="produto">Os dados do novo produto.</param>
+        /// <returns>O produto criado com sucesso.</returns>
+        /// <response code="201">Produto criado com sucesso</response>
+        /// <response code="400">Requisição inválida</response>
         // POST: api/Produto
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -84,6 +116,13 @@ namespace OrderManagementAPI.Controllers
             return CreatedAtAction("GetProduto", new { id = produto.IdProduto }, produto);
         }
 
+        /// <summary>
+        /// Exclui um produto pelo ID.
+        /// </summary>
+        /// <param name="id">O ID do produto.</param>
+        /// <returns>Status de sucesso ou erro.</returns>
+        /// <response code="204">Produto excluído com sucesso</response>
+        /// <response code="404">Produto não encontrado</response>
         // DELETE: api/Produto/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduto(int id)

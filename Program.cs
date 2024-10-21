@@ -10,6 +10,13 @@ builder.Services.AddDbContext<OrderContext>(options =>
 
 builder.Services.AddScoped<PedidoService>();
 
+builder.Services.AddSwaggerGen(c =>
+{
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
