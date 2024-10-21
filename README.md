@@ -8,6 +8,8 @@
 
 <p>A documentação da API foi feito utilizando o Swagger, para verificação sem precisar rodar o projeto, há um PDF chamado Documentação Swagger OrderManageAPI.PDF, no diretório raiz do projeto.</p>
 
+<p>A arquitetura do projeto é similar ao MVC(Model View Controller), exceto pela ausência das Views e utilização de Services para abstrair Regras de Negócio dos Controllers./bEste sendo apenas responsável pelas Rotas.</p>
+
 <h3>💡 Como Usar</h3>
 <ol>
   <li>Clone este repositório:</li>
